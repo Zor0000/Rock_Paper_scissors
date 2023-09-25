@@ -48,7 +48,7 @@ int main()
         printf("\n\n\t\t\t\tOh! You have lost the game!\n");
     }
         printf("\t\t\t\tYOu choose : %c and Computer choose : %c\n",you, computer);
- 
+ //this is a comment
     return 0;
 
 }
