@@ -9,7 +9,7 @@ int game(char you,char computer)
 
     if ((you=='s' && computer=='p')||(you == 'p'&& computer =='z')||
         (you=='z'&& computer =='s'))
-        return -1;
+        return 2;
     
     return 1;
 }
@@ -33,21 +33,23 @@ int main()
     else 
         computer='z';
 
-    printf("\n\n\n\n\t\t\t\tEnter s for STONE, p for PAPER and z for SCISSOR\n\t\t\t\t\t\t\t");
+    printf("\tEnter s for STONE, p for PAPER and z for SCISSOR\t\n");
 
     scanf("%c",&you);
-
+    
+    printf("\tYOu choose : %c and Computer choose : %c\n",you, computer);
+    
     result=game(you,computer);
-    if (result == -1) {
-        printf("\n\n\t\t\t\tGame Draw!\n");
+    if (result == 2) {
+        printf("\tOh! You have lost the game!\n");
     }
     else if (result == 1) {
-        printf("\n\n\t\t\t\tWow! You have won the game!\n");
+        printf("\tWow! You have won the game!\n");
     }
-    else {
-        printf("\n\n\t\t\t\tOh! You have lost the game!\n");
+    else if (result == 0) {
+        printf("\tGame Draw!\n");
     }
-        printf("\t\t\t\tYOu choose : %c and Computer choose : %c\n",you, computer);
+        
     return 0;
 
 }
